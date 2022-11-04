@@ -62,4 +62,4 @@
 
 #### Contributor - 專案開發人員
 ---
-[Chloe905] (https://github.com/Chloe905)
+[Chloe905](https://github.com/Chloe905)
