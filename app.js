@@ -36,7 +36,7 @@ app.get('/search', (req, res) => {
   const keyword = req.query.keyword.toLowerCase().trim() // 進行比對的字串，轉換成小寫，並剔除空格
   const restaurants = restaurantList.filter(restaurant => {
     return restaurant.name.toLowerCase().includes(keyword) ||
-    restaurant.category.includes(keyword)
+    restaurant.category.toLowerCase().includes(keyword)
   })
   // 新增搜尋不到餐廳
   if (!restaurants.length) {
