@@ -28,6 +28,10 @@ app.get('/restaurants/:id', (req, res) => {
 })
 
 app.get('/search', (req, res) => {
+  // 沒有輸入按送出，redirect 回根目錄
+  if (!req.query.keyword) {
+    return res.redirect('/')
+  }
   const keywords = req.query.keyword // 輸入搜尋欄的字
   const keyword = req.query.keyword.toLowerCase().trim() // 進行比對的字串，轉換成小寫，並剔除空格
   const restaurants = restaurantList.filter(restaurant => {
