@@ -42,6 +42,7 @@
     在 Terminal 輸入 $ code .
     
  即可開始編輯
+ 
 5. 啟動伺服器，執行 app.js 檔案
 
     在 Terminal 輸入 $ nodemon app.js
