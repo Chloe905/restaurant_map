@@ -50,6 +50,7 @@
 
     Express is running on http://localhost:3000
 
+
 現在，你可開啟任一瀏覽器瀏覽器輸入 http://localhost:3000 開始使用CC美食網 ~
 
 #### Built With - 使用工具
