@@ -27,7 +27,7 @@
 #### Installing - 安裝流程
 1. 打開你的 terminal，Clone 此專案至本機電腦
 
-    `$ git clone https://github.com/Chloe905/restaurant_map.git`
+    $ git clone https://github.com/Chloe905/restaurant_map.git
     
 2. 開啟終端機(Terminal)，進入存放此專案的資料夾
 
@@ -41,7 +41,7 @@
 
     在 Terminal 輸入 $ code .
     
-即可開始編輯
+ 即可開始編輯
 5. 啟動伺服器，執行 app.js 檔案
 
     在 Terminal 輸入 $ nodemon app.js
