@@ -26,17 +26,24 @@
 
 #### Installing - 安裝流程
 1. 打開你的 terminal，Clone 此專案至本機電腦
+
     $ git clone https://github.com/Chloe905/restaurant_map.git
+    
 2. 開啟終端機(Terminal)，進入存放此專案的資料夾
+
     $ cd restaurant_map 
 3. 安裝 npm 套件
+
     在 Terminal 輸入 $ npm install 
 4. 打開 VS code
+
     在 Terminal 輸入 $ code .
 即可開始編輯
 5. 啟動伺服器，執行 app.js 檔案
+
     在 Terminal 輸入 $ nodemon app.js
 6. 當 terminal 出現以下字樣，表示本機伺服器已啟動並成功連結
+
     Express is running on http://localhost:3000
 
 現在，你可開啟任一瀏覽器瀏覽器輸入 http://localhost:3000 開始使用CC美食網 ~
