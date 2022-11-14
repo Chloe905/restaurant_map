@@ -5,12 +5,12 @@ const exphbs = require('express-handlebars')
 // 載入mongoose
 const mongoose = require('mongoose')
 
+// 載入 restaurant model
+const Restaurant = require('./models/restaurant')
+
 // 2. Define server related variable
 const port = 3000
 const app = express()
-
-// 8. Require package used in the project
-const restaurantList = require('./restaurant.json').results
 
 // 非正式環境時使用dotenv
 if (process.env.NODE_ENV !== 'production') {
@@ -39,7 +39,10 @@ app.use(express.static('public'))
 
 // 3. Set route and handle request and response
 app.get('/', (req, res) => {
-  res.render('index', { restaurant: restaurantList })
+  Restaurant.find()
+    .lean()
+    .then((restaurant) => res.render('index', { restaurant }))
+    .catch(error => console.log(error))
 })
 
 app.get('/restaurants/:id', (req, res) => {
