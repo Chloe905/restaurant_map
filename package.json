@@ -1,6 +1,7 @@
 {
   "name": "restaurant_list",
   "devDependencies": {
+    "dotenv": "^16.0.3",
     "standard": "*"
   },
   "version": "1.0.0",
@@ -16,6 +17,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
-    "express-handlebars": "^3.0.0"
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^5.9.7"
   }
 }

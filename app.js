@@ -1,12 +1,34 @@
 // 1. Insert Express by require
 const express = require('express')
-const app = express()
-// 2. Define server related variable
-const port = 3000
 // 5. Insert express-handlebars by require
 const exphbs = require('express-handlebars')
+// 載入mongoose
+const mongoose = require('mongoose')
+
+// 2. Define server related variable
+const port = 3000
+const app = express()
+
 // 8. Require package used in the project
 const restaurantList = require('./restaurant.json').results
+
+// 非正式環境時使用dotenv
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
+// 連線到mongoDB
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+
+// 取得資料庫連線狀態
+const db = mongoose.connection
+// 連線失敗
+db.on('error', () => {
+  console.error('mongodb error!')
+})
+// 連線成功
+db.once('open', () => {
+  console.log('mongodb connected!')
+})
 
 // 6. Set template Engine
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
@@ -36,7 +58,7 @@ app.get('/search', (req, res) => {
   const keyword = req.query.keyword.toLowerCase().trim() // 進行比對的字串，轉換成小寫，並剔除空格
   const restaurants = restaurantList.filter(restaurant => {
     return restaurant.name.toLowerCase().includes(keyword) ||
-    restaurant.category.toLowerCase().includes(keyword)
+      restaurant.category.toLowerCase().includes(keyword)
   })
   // 新增搜尋不到餐廳
   if (!restaurants.length) {
