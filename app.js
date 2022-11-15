@@ -4,7 +4,8 @@ const express = require('express')
 const exphbs = require('express-handlebars')
 // 載入mongoose
 const mongoose = require('mongoose')
-
+// 載入 body-parser
+const bodyParser = require('body-parser')
 // 載入 restaurant model
 const Restaurant = require('./models/restaurant')
 
@@ -37,14 +38,25 @@ app.set('view engine', 'handlebars')
 // 7. Set static files
 app.use(express.static('public'))
 
-// 3. Set route and handle request and response
+app.use(bodyParser.urlencoded({ extended: true }))
+
+// 瀏覽全部餐廳
 app.get('/', (req, res) => {
   Restaurant.find()
     .lean()
-    .then((restaurant) => res.render('index', { restaurant }))
+    .then((restaurants) => res.render('index', { restaurants }))
     .catch(error => console.log(error))
 })
-
+// 新增餐廳頁面
+app.get('/restaurants/new', (req, res) => {
+  res.render('new')
+})
+// 新增餐廳
+app.post('/restaurants', (req, res) => {
+  Restaurant.create(req.body)
+    .then(() => res.redirect('/'))
+    .catch(err => console.log(err))
+})
 app.get('/restaurants/:id', (req, res) => {
   // find回傳搜尋到的值
   // toString 型別轉換再判斷
