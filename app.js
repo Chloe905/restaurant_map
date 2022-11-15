@@ -57,11 +57,15 @@ app.post('/restaurants', (req, res) => {
     .then(() => res.redirect('/'))
     .catch(err => console.log(err))
 })
+
 app.get('/restaurants/:id', (req, res) => {
   // find回傳搜尋到的值
   // toString 型別轉換再判斷
-  const restaurants = restaurantList.find(restaurant => (restaurant.id).toString() === req.params.id)
-  res.render('show', { restaurant: restaurants })
+  const id = req.params.id
+  return Restaurant.findById(id)
+    .lean()
+    .then(restaurant => res.render('detail', { restaurant }))
+    .catch(err => console.log(err))
 })
 
 app.get('/search', (req, res) => {
