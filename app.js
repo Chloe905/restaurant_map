@@ -18,7 +18,7 @@ if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
 // 連線到mongoDB
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
 
 // 取得資料庫連線狀態
 const db = mongoose.connection
@@ -57,14 +57,27 @@ app.post('/restaurants', (req, res) => {
     .then(() => res.redirect('/'))
     .catch(err => console.log(err))
 })
-
+// 查看單一店詳情
 app.get('/restaurants/:id', (req, res) => {
-  // find回傳搜尋到的值
-  // toString 型別轉換再判斷
   const id = req.params.id
   return Restaurant.findById(id)
     .lean()
     .then(restaurant => res.render('detail', { restaurant }))
+    .catch(err => console.log(err))
+})
+// 修改餐廳資訊
+app.get('/restaurants/:id/edit', (req, res) => {
+  const id = req.params.id
+  return Restaurant.findById(id)
+    .lean()
+    .then(restaurant => res.render('edit', { restaurant }))
+    .catch(err => console.log(err))
+})
+
+app.post('/restaurants/:id/edit', (req, res) => {
+  const id = req.params.id
+  Restaurant.findByIdAndUpdate(id, req.body)
+    .then(() => { res.redirect(`/restaurants/${id}`) })
     .catch(err => console.log(err))
 })
 

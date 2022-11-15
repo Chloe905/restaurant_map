@@ -1,19 +1,20 @@
-<h1 class="bm-1 add-new-title text-center">新增餐廳</h1>
+<h1 class="bm-1 add-new-title text-center">修改餐廳資訊</h1>
 <div class="container">
-  <form action="/restaurants" method="POST" class="row g-3 ">
+  <form action="/restaurants/{{ restaurant._id}}/edit" method="POST" class="row g-3 ">
     <div class="col-md-4 mb-3">
       <label for="name" class="form-label">餐廳名：</label>
-      <input type="text" class="form-control" placeholder="喵咖啡" name="name" id="name" required>
+      <input type="text" class="form-control" name="name" id="name" value="{{ restaurant.name }}" required>
     </div>
 
     <div class="col-md-4 mb-3">
       <label for="name_en" class="form-label">English name：</label>
-      <input type="text" class="form-control" placeholder="meow cafe" name="name_en" id="name_en" required>
+      <input type="text" class="form-control" name="name_en" id="name_en" value="{{ restaurant.name_en }}" required>
     </div>
 
-    <div class="col-md-4 mb-3">
+    <div class=" col-md-4 mb-3">
       <label for="category" class="form-label">餐廳類別：</label>
-      <input list="categorys" type="text" class="form-control" placeholder="咖啡廳" name="category" id="category" required>
+      <input list="categorys" type="text" class="form-control" name="category" id="category"
+        value="{{ restaurant.category }}" required>
       <datalist id="categorys">
         <option>美式餐廳</option>
         <option>義式餐廳</option>
@@ -26,37 +27,42 @@
 
     <div class="col-md-6 mb-3">
       <label for="image" class="form-label">餐廳圖片連結：</label>
-      <input type="url" class="form-control" placeholder="http://www.example.com" name="image" id="image" required>
+      <input type="url" class="form-control" placeholder="http://www.example.com" name="image" id="image"
+        value="{{ restaurant.image }}" required>
     </div>
 
     <div class="col-md-6 mb-3">
       <label for="location" class="form-label">餐廳地址：</label>
-      <input type="text" class="form-control" placeholder="台北市信義區吳興街2002號" name="location" id="location" required>
+      <input type="text" class="form-control" placeholder="台北市信義區吳興街2002號" name="location" id="location"
+        value="{{ restaurant.location }}" required>
     </div>
 
     <div class="col-md-6 mb-3">
       <label for="phone" class="form-label">餐廳電話：</label>
-      <input type="tel" class="form-control" placeholder="02-1234567" name="phone" id="phone" required>
+      <input type="tel" class="form-control" placeholder="02-1234567" name="phone" id="phone"
+        value="{{ restaurant.phone }}" required>
     </div>
 
     <div class="col-md-6 mb-3">
       <label for="google_map" class="form-label">google map 連結：</label>
       <input type="url" class="form-control" placeholder="http://www.example.com" name="google_map" id="google_map"
-        required>
+        value="{{ restaurant.google_map }}" required>
     </div>
 
     <div class="col-md-2 mb-3">
       <label for="rating" class="form-label">評價星等：</label>
-      <input type="number" class="form-control" name="rating" id="rating" min="0" max="5" step="0.1" required>
+      <input type="number" class="form-control" name="rating" id="rating" min="0" max="5" step="0.1"
+        value="{{ restaurant.rating }}" required>
     </div>
 
     <div class="col-md-10 mb-3">
       <label for="description" class="form-label">餐廳簡介：</label>
-      <textarea class="form-control" name="description" id="description" rows="3" cols="20" required></textarea>
+      <textarea class="form-control" name="description" id="description" rows="3" cols="20"
+        required>{{ restaurant.description }}</textarea>
     </div>
 
     <div class="text-end">
-      <button type="submit" class="btn btn-outline-success">確定新增</button>
+      <button type="submit" class="btn btn-outline-success">確定更改</button>
 
       <a href="/">
         <button type="button" class="btn btn-outline-secondary">返回主頁</button>
