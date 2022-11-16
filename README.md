@@ -28,6 +28,7 @@
 ***
 #### Prerequisites - 環境建置
 1. [Node.js](https://nodejs.org/en/)
+2. [npm](https://www.npmjs.com/)
 2. [Nodemon](https://www.npmjs.com/package/nodemon)
 3. [Express](https://www.npmjs.com/package/express)
 4. [Express-Handlebars](https://www.npmjs.com/package/express-handlebars)
@@ -41,19 +42,20 @@
 
             $ cd restaurant_map 
     
-3. 安裝 npm 套件
-
-            在 Terminal 輸入 $ npm install 
-    
-4. 打開 VS code
+3. 打開 VS code
 
             在 Terminal 輸入 $ code .
     
  即可開始編輯
  
+4. 連線 mongoose
+
+          MONGODB_URI=mongodb+srv://<Your MongoDB Account>:<Your MongoDB Password>@cluster0.xxxx.xxxx.net/<Your MongoDB Table><?retryWrites=true&w=majority
+ 
 5. 啟動伺服器，執行 app.js 檔案
 
-          在 Terminal 輸入 $ nodemon app.js
+          在 Terminal 輸入 $ npm run dev
+                          $ npm run seed
     
 6. 當 terminal 出現以下字樣，表示本機伺服器已啟動並成功連結
 
@@ -62,6 +64,7 @@
 7. 若要暫停
 
           按下ctrl+c
+          
 現在，你可開啟任一瀏覽器瀏覽器輸入 http://localhost:3000 開始使用CC美食網 ~
 
 #### Built With - 使用工具
