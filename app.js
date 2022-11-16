@@ -8,6 +8,7 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 // 載入 restaurant model
 const Restaurant = require('./models/restaurant')
+const restaurant = require('./models/restaurant')
 
 // 2. Define server related variable
 const port = 3000
@@ -81,6 +82,14 @@ app.post('/restaurants/:id/edit', (req, res) => {
     .catch(err => console.log(err))
 })
 
+// 刪除餐廳
+app.post('/restaurants/:id/delete', (req, res) => {
+  const id = req.params.id
+  return Restaurant.findById(id)
+    .then(restaurant => restaurant.remove())
+    .then(() => res.redirect('/'))
+    .catch(err => console.log(err))
+})
 app.get('/search', (req, res) => {
   // 沒有輸入按送出，redirect 回根目錄
   if (!req.query.keyword) {

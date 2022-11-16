@@ -17,7 +17,8 @@
 </div>
 
 <div class="d-flex justify-content-center mt-3">
-  <a href="./restaurants/new" type="button" class="btn btn-secondary btn-sm"><i class="fas fa-plus-circle"></i> add
+  <a href="./restaurants/new" type="button" class="btn btn-secondary btn-sm rounded-pill"><i
+      class="fas fa-plus-circle"></i> add
     restaurant</a>
 </div>
 
@@ -47,8 +48,16 @@
             </div>
 
             <div class="card-footer d-flex justify-content-end ">
-              <a href="/restaurants/{{this._id}}/edit" class="text-secondary me-3"><i class="far fa-edit"></i></a>
-              <a href="/restaurants/{{this._id}}" class="text-secondary me-3"><i class="fas fa-info-circle"></i></a>
+              <a href="/restaurants/{{this._id}}/edit"
+                class="me-3 btn btn-outline-secondary btn-sm delete-btn border-white rounded-circle"><i
+                  class="far fa-edit"></i></a>
+              <a href="/restaurants/{{this._id}}"
+                class=" me-3 btn btn-outline-secondary btn-sm delete-btn border-white rounded-circle"><i
+                  class="fas fa-info-circle "></i></a>
+              <form action="/restaurants/{{this._id}}/delete" method="POST" style="display: inline;">
+                <button type="submit" class=" btn btn-outline-secondary btn-sm delete-btn border-white rounded-circle"
+                  onclick="return confirm(`確定要刪除 {{this.name}} 嗎?`)"><i class=" fas fa-trash-alt"></i></button>
+              </form>
 
             </div>
           </div>

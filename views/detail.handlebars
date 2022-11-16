@@ -1,8 +1,16 @@
 <h1 class="mb-1 restaurant-show-title">{{restaurant.name}}</h1>
 <div class="container">
   <div class="d-flex justify-content-between mb-3">
-    <a href="/restaurants/{{restaurant._id}}/edit" class="text-secondary me-3"><i class="far fa-edit"></i></a>
-    <a href="/"><i class="fas fa-undo-alt btn btn-secondary"></i></a>
+    <div>
+      <a href="/restaurants/{{restaurant._id}}/edit"
+        class="btn btn-outline-secondary btn-sm delete-btn border-white rounded-circle "><i class="far fa-edit"></i></a>
+      <form action="/restaurants/{{restaurant._id}}/delete" method="POST" style="display: inline;">
+        <button type="submit" class=" btn btn-outline-secondary btn-sm delete-btn border-white rounded-circle "><i
+            class=" fas fa-trash-alt"></i></button>
+      </form>
+    </div>
+
+    <a href="/"><i class="fas fa-undo-alt btn btn-secondary btn-sm"></i></a>
 
   </div>
   <div class="row">
