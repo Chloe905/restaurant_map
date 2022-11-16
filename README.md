@@ -54,8 +54,8 @@
  
 5. 啟動伺服器，執行 app.js 檔案
 
-          在 Terminal 輸入 $ npm run dev
-                          $ npm run seed
+          在 Terminal 輸入 $ npm run seed
+                          $ npm run dev
     
 6. 當 terminal 出現以下字樣，表示本機伺服器已啟動並成功連結
 
