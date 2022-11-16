@@ -5,7 +5,8 @@
       <form action="/search">
         <h4 class="mb-2">尋找餐廳：</h4>
         <div class="input-group">
-          <input type="text" name="keyword" class="form-control" placeholder="輸入餐廳、分類" aria-label="Restaurant Name..." value="{{keywords}}" aria-describedby="search-button">
+          <input type="text" name="keyword" class="form-control" placeholder="輸入餐廳、分類" aria-label="Restaurant Name..."
+            value="{{keywords}}" aria-describedby="search-button">
           <div class="input-group-append">
             <button class="btn btn-major" type="submit" id="search-button"><i class="fas fa-search"></i></button>
           </div>
@@ -15,12 +16,16 @@
   </div>
 </div>
 
+
 {{!-- cannot found --}}
 <div class="mt-5 d-flex justify-content-center">
-  <span class="badge rounded-pill bg-secondary" >
-  <i class="fas fa-exclamation"></i>
-  找不到符合條件的餐聽
+  <span class="badge rounded-pill bg-danger">
+    <i class="fas fa-exclamation"></i>
+    找不到符合條件的餐聽
   </span>
+</div>
+<div class="text-center mt-3">
+  <a href="/"><i class="fas fa-undo-alt btn btn-secondary btn-sm"></i></a>
 </div>
 
 
