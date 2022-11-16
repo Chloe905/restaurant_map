@@ -1,14 +1,18 @@
 # CC美食地圖
 ***
-此專案為使用node.js與Express開發的美食地圖，使用者可以在餐廳列表內依名稱、類別搜尋想要的餐廳，並可以點入每間餐廳中，查看更詳細資訊。
+此專案為使用node.js與Express開發的美食地圖，使用者可以在餐廳列表內依名稱、類別搜尋想要的餐廳，並可以新增餐廳、更改餐廳資訊、刪除餐廳及點入每間餐廳中，查看更詳細資訊。
 
 ### 專案畫面如下
 ***
 #### 首頁
-![image](https://user-images.githubusercontent.com/100898369/199881142-e94a3f32-3ff6-4e92-b432-565c767b9112.png)
+![image](image.png)
 
 #### 詳細資訊
-![image](https://user-images.githubusercontent.com/100898369/199900272-777f3ce6-ea88-437e-93eb-f4ed36a75211.png)
+![image](image.png)
+
+#### 新增頁面
+![image](image.png)
+
 
 ### 功能列表
 ***
