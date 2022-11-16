@@ -5,20 +5,24 @@
 ### 專案畫面如下
 ***
 #### 首頁
-![image](image.png)
+![image](https://user-images.githubusercontent.com/100898369/202116995-fca925e1-015e-4edd-ba71-4cee53980e55.png)
 
 #### 詳細資訊
-![image](image.png)
+![image](https://user-images.githubusercontent.com/100898369/202117074-87c762d0-7594-4a84-8db0-a30806c45c64.png)
 
 #### 新增頁面
-![image](image.png)
+![image](https://user-images.githubusercontent.com/100898369/202117229-c5e9db4d-9cf1-4ea0-9ef6-b43940687fd3.png)
 
 
 ### 功能列表
 ***
 - 可於主畫面瀏覽所有餐廳，包含餐廳名、類別以及星等
 - 搜尋欄可依名稱、類別進行搜尋
-- 點擊任一家餐廳，即可查閱詳細資訊，如:餐廳類別、地址(及連結)、電話和餐廳簡介
+- 點擊+按鈕，可以新增喜愛餐廳
+- 點擊任一家餐廳圖片或是下方 i 按鈕，即可查閱詳細資訊，如:餐廳類別、地址(及google-map連結)、電話和餐廳簡介
+- 點擊每間餐廳下方鉛筆按鈕，可以進入修改餐廳資訊
+- 點擊下方垃圾桶![image](https://user-images.githubusercontent.com/100898369/202118079-15d65ba1-41c2-4408-b452-c6350879d5a2.png)可以刪除此餐廳所有資訊
+
 
 ### Getting start
 ***
@@ -55,14 +59,22 @@
 
            Express is running on http://localhost:3000
 
+7. 若要暫停
 
+          按下ctrl+c
 現在，你可開啟任一瀏覽器瀏覽器輸入 http://localhost:3000 開始使用CC美食網 ~
 
 #### Built With - 使用工具
 ***
 * [Visual Studio Code](https://visualstudio.microsoft.com/zh-hant/) - 開發環境
-* [Express](https://www.npmjs.com/package/express) - 應用程式架構
-* [Express-Handlebars](https://www.npmjs.com/package/express-handlebars) - 模板引擎
+* [Node.js](https://nodejs.org/en/) v18.12.0
+* [Express](https://www.npmjs.com/package/express) 4.16.4- 應用程式架構
+* [Express-Handlebars](https://www.npmjs.com/package/express-handlebars) 3.0.0 - 模板引擎
+* [Bootstrap](https://getbootstrap.com/docs/5.1/getting-started/introduction/) v5.1.3
+* [fontawesome](https://fontawesome.com/v5/search?q=delete&o=r&m=free) v5.15.4
+* [mongoDB](https://www.mongodb.com/cloud/atlas/lp/try4?utm_source=google&utm_campaign=search_gs_pl_evergreen_atlas_core_prosp-brand_gic-null_apac-tw_ps-all_desktop_eng_lead&utm_term=mongodb&utm_medium=cpc_paid_search&utm_ad=e&utm_ad_campaign_id=12212624371&adgroup=115749712503&gclid=CjwKCAiAjs2bBhACEiwALTBWZcUKpTcWMYz-H2ujR3AWXk8bd7bfPB458D5WrtfmwolB5WWeWjP3zRoC7BwQAvD_BwE)
+* [mongoose](https://mongoosejs.com/) 5.9.7
+* [dotenv](https://www.npmjs.com/package/dotenv) 16.0.3
 
 #### Contributor - 專案開發人員
 ---
