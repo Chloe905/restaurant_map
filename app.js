@@ -42,7 +42,12 @@ app.get('/', (req, res) => {
   Restaurant.find()
     .lean()
     .then((restaurants) => res.render('index', { restaurants }))
-    .catch(error => console.log(error))
+    .catch(err => {
+      console.log(err)
+      res.render(
+        'errorPage',
+        { error: err.message })
+    })
 })
 
 // 新增餐廳頁面
@@ -54,7 +59,12 @@ app.get('/restaurants/new', (req, res) => {
 app.post('/restaurants', (req, res) => {
   Restaurant.create(req.body)
     .then(() => res.redirect('/'))
-    .catch(err => console.log(err))
+    .catch(err => {
+      console.log(err)
+      res.render(
+        'errorPage',
+        { error: err.message })
+    })
 })
 
 // 查看單一店詳情
@@ -63,7 +73,12 @@ app.get('/restaurants/:id', (req, res) => {
   return Restaurant.findById(id)
     .lean()
     .then(restaurant => res.render('detail', { restaurant }))
-    .catch(err => console.log(err))
+    .catch(err => {
+      console.log(err)
+      res.render(
+        'errorPage',
+        { error: err.message })
+    })
 })
 
 // 修改餐廳資訊
@@ -72,14 +87,24 @@ app.get('/restaurants/:id/edit', (req, res) => {
   return Restaurant.findById(id)
     .lean()
     .then(restaurant => res.render('edit', { restaurant }))
-    .catch(err => console.log(err))
+    .catch(err => {
+      console.log(err)
+      res.render(
+        'errorPage',
+        { error: err.message })
+    })
 })
 
 app.post('/restaurants/:id/edit', (req, res) => {
   const id = req.params.id
   Restaurant.findByIdAndUpdate(id, req.body)
     .then(() => { res.redirect(`/restaurants/${id}`) })
-    .catch(err => console.log(err))
+    .catch(err => {
+      console.log(err)
+      res.render(
+        'errorPage',
+        { error: err.message })
+    })
 })
 
 // 刪除餐廳
@@ -88,7 +113,12 @@ app.post('/restaurants/:id/delete', (req, res) => {
   return Restaurant.findById(id)
     .then(restaurant => restaurant.remove())
     .then(() => res.redirect('/'))
-    .catch(err => console.log(err))
+    .catch(err => {
+      console.log(err)
+      res.render(
+        'errorPage',
+        { error: err.message })
+    })
 })
 
 // 搜尋餐廳
@@ -114,7 +144,12 @@ app.get('/search', (req, res) => {
         res.render('index', { restaurants, keywords })
       }
     })
-    .catch(err => console.log(err))
+    .catch(err => {
+      console.log(err)
+      res.render(
+        'errorPage',
+        { error: err.message })
+    })
 })
 
 // 4. Start and listen to server
