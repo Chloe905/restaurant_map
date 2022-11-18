@@ -82,6 +82,11 @@ header {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+.req {
+  color: red;
+}
+
+
 @media screen and (max-width: 992px) {
 
   .card img {
