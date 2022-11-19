@@ -41,6 +41,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.get('/', (req, res) => {
   Restaurant.find()
     .lean()
+    .sort({ _id: 'asc' })
     .then((restaurants) => res.render('index', { restaurants }))
     .catch(err => {
       console.log(err)
@@ -129,8 +130,17 @@ app.get('/search', (req, res) => {
   const keywords = req.query.keyword // 輸入搜尋欄的字
   const keyword = req.query.keyword.toLowerCase().trim() // 進行比對的字串，轉換成小寫，並剔除空格
 
+  const { sort } = req.query
+  const sortBy = {
+    default: { _id: 'asc' },
+    AtoZ: { name: 'asc' },
+    ZtoA: { name: 'desc' },
+    category: { category: 'asc' },
+    location: { location: 'asc' }
+  }
   Restaurant.find()
     .lean()
+    .sort(sortBy[sort])
     .then((restaurant) => {
       const restaurants = restaurant.filter(data => {
         return data.name.toLowerCase().includes(keyword) ||
@@ -152,6 +162,20 @@ app.get('/search', (req, res) => {
     })
 })
 
+// 排序餐廳
+app.get('/sort', (req, res) => {
+  console.log(req.query.sort)
+  Restaurant.find()
+    .lean()
+    .sort({ name: 'asc' })
+    .then((restaurants) => res.render('index', { restaurants }))
+    .catch(err => {
+      console.log(err)
+      res.render(
+        'errorPage',
+        { error: err.message })
+    })
+})
 // 4. Start and listen to server
 app.listen(port, () => {
   console.log(`Express is running on http://localhost:${port}`)
