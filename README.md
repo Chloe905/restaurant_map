@@ -17,7 +17,7 @@
 ### 功能列表
 ***
 - 可於主畫面瀏覽所有餐廳，包含餐廳名、類別以及星等
-- 搜尋欄可依名稱、類別進行搜尋
+- 搜尋欄可依名稱、類別進行搜尋，並可依字母、地區或類別排序
 - 點擊+按鈕，可以新增喜愛餐廳
 - 點擊任一家餐廳圖片或是下方 i 按鈕，即可查閱詳細資訊，如:餐廳類別、地址(及google-map連結)、電話和餐廳簡介
 - 點擊每間餐廳下方鉛筆按鈕，可以進入修改餐廳資訊
@@ -78,7 +78,7 @@
 * [mongoDB](https://www.mongodb.com/cloud/atlas/lp/try4?utm_source=google&utm_campaign=search_gs_pl_evergreen_atlas_core_prosp-brand_gic-null_apac-tw_ps-all_desktop_eng_lead&utm_term=mongodb&utm_medium=cpc_paid_search&utm_ad=e&utm_ad_campaign_id=12212624371&adgroup=115749712503&gclid=CjwKCAiAjs2bBhACEiwALTBWZcUKpTcWMYz-H2ujR3AWXk8bd7bfPB458D5WrtfmwolB5WWeWjP3zRoC7BwQAvD_BwE)
 * [mongoose](https://mongoosejs.com/) 5.9.7
 * [dotenv](https://www.npmjs.com/package/dotenv) 16.0.3
-
+* [method override](https://www.npmjs.com/package/method-override) 3.0.0
 #### Contributor - 專案開發人員
 ---
 [Chloe905](https://github.com/Chloe905)
