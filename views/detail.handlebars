@@ -2,9 +2,9 @@
 <div class="container">
   <div class="d-flex justify-content-between mb-3">
     <div>
-      <a href="/restaurants/{{restaurant._id}}/edit"
+      <a href="/restaurants/{{restaurant._id}}?_method=PUT"
         class="btn btn-outline-secondary btn-sm delete-btn border-white rounded-circle "><i class="far fa-edit"></i></a>
-      <form action="/restaurants/{{restaurant._id}}/delete" method="POST" style="display: inline;">
+      <form action="/restaurants/{{restaurant._id}}?_method=DELETE" method="POST" style="display: inline;">
         <button type="submit" class=" btn btn-outline-secondary btn-sm delete-btn border-white rounded-circle "><i
             class=" fas fa-trash-alt"></i></button>
       </form>
