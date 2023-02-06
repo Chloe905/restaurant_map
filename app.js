@@ -1,10 +1,9 @@
-// Insert Express、express-handlebars、mongoose、body-parser、methodOverride
 const express = require('express')
 const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 const routes = require('./routes')
-// Define server related variable
+
 const port = 3000
 const app = express()
 
