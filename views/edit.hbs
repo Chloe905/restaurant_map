@@ -28,37 +28,37 @@
     <div class="col-md-6 mb-3">
       <label for="image" class="form-label">餐廳圖片連結：</label>
       <input type="url" class="form-control" placeholder="http://www.example.com" name="image" id="image"
-        value="{{ restaurant.image }}" required>
+        value="{{ restaurant.image }}">
     </div>
 
     <div class="col-md-6 mb-3">
       <label for="location" class="form-label">餐廳地址：</label>
       <input type="text" class="form-control" placeholder="台北市信義區吳興街2002號" name="location" id="location"
-        value="{{ restaurant.location }}" required>
+        value="{{ restaurant.location }}">
     </div>
 
     <div class="col-md-6 mb-3">
       <label for="phone" class="form-label">餐廳電話：</label>
       <input type="tel" class="form-control" placeholder="02-1234567" name="phone" id="phone"
-        value="{{ restaurant.phone }}" required>
+        value="{{ restaurant.phone }}">
     </div>
 
     <div class="col-md-6 mb-3">
       <label for="google_map" class="form-label">google map 連結：</label>
       <input type="url" class="form-control" placeholder="http://www.example.com" name="google_map" id="google_map"
-        value="{{ restaurant.google_map }}" required>
+        value="{{ restaurant.google_map }}">
     </div>
 
     <div class="col-md-2 mb-3">
       <label for="rating" class="form-label">評價星等：</label>
       <input type="number" class="form-control" name="rating" id="rating" min="0" max="5" step="0.1"
-        value="{{ restaurant.rating }}" required>
+        value="{{ restaurant.rating }}">
     </div>
 
     <div class="col-md-10 mb-3">
       <label for="description" class="form-label">餐廳簡介：</label>
-      <textarea class="form-control" name="description" id="description" rows="3" cols="20"
-        required>{{ restaurant.description }}</textarea>
+      <textarea class="form-control" name="description" id="description" rows="3"
+        cols="20">{{ restaurant.description }}</textarea>
     </div>
 
     <div class="text-end">
