@@ -14,8 +14,8 @@ router.get('/new', (req, res) => {
 // 新增餐廳
 router.post('/', (req, res) => {
   const userId = req.user._id
-  const name = req.body.name
-  return Restaurant.create({ name, userId })
+  const { name, category } = req.body
+  return Restaurant.create({ name, userId, category })
     .then(() => res.redirect('/'))
     .catch(err => {
       console.log(err)
