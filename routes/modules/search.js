@@ -9,7 +9,7 @@ const Restaurant = require('../../models/restaurant')
 router.get('/', (req, res) => {
   // 沒有輸入按送出，redirect 回根目錄
   if (!req.query.keyword) { return res.redirect('/') }
-
+  const userId = req.user._id
   const keywords = req.query.keyword // 輸入搜尋欄的字
   const keyword = req.query.keyword.toLowerCase().trim() // 進行比對的字串，轉換成小寫，並剔除空格
 
@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
     location: { location: 'asc' }
   }
 
-  Restaurant.find()
+  Restaurant.find({ userId })// 加入查詢條件
     .lean()
     .sort(sortBy[sort])
     .then((restaurant) => {
