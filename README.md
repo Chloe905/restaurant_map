@@ -4,8 +4,19 @@
 
 ### 專案畫面如下
 ***
+#### 登入頁
+可透過以下測試資料進行登入或是以facebook登入
+
+``` 
+email: user1@example.com
+password: 12345678
+```
+![image](https://user-images.githubusercontent.com/100898369/217990883-f9e8443a-478e-4c24-b520-8ef790cca12b.png)
+#### 註冊頁
+![image](https://user-images.githubusercontent.com/100898369/217990984-76ed1e68-4ade-4b92-897d-71a4e2d207dd.png)
+
 #### 首頁
-![image](https://user-images.githubusercontent.com/100898369/202116995-fca925e1-015e-4edd-ba71-4cee53980e55.png)
+![image](https://user-images.githubusercontent.com/100898369/217991711-6f062a2b-9653-4953-8cc2-434f6b5a1ce2.png)
 
 #### 詳細資訊
 ![image](https://user-images.githubusercontent.com/100898369/202117074-87c762d0-7594-4a84-8db0-a30806c45c64.png)
@@ -16,9 +27,10 @@
 
 ### 功能列表
 ***
+- 使用者可以註冊、登入、登出，登入後即可使用自己的餐廳地圖
 - 可於主畫面瀏覽所有餐廳，包含餐廳名、類別以及星等
 - 搜尋欄可依名稱、類別進行搜尋，並可依字母、地區或類別排序
-- 點擊+按鈕，可以新增喜愛餐廳
+- 點擊add restaurant按鈕，可以新增喜愛餐廳
 - 點擊任一家餐廳圖片或是下方 i 按鈕，即可查閱詳細資訊，如:餐廳類別、地址(及google-map連結)、電話和餐廳簡介
 - 點擊每間餐廳下方鉛筆按鈕，可以進入修改餐廳資訊
 - 點擊下方垃圾桶可以刪除此餐廳所有資訊
@@ -29,9 +41,9 @@
 #### Prerequisites - 環境建置
 1. [Node.js](https://nodejs.org/en/)
 2. [npm](https://www.npmjs.com/)
-2. [Nodemon](https://www.npmjs.com/package/nodemon)
-3. [Express](https://www.npmjs.com/package/express)
-4. [Express-Handlebars](https://www.npmjs.com/package/express-handlebars)
+3. [Nodemon](https://www.npmjs.com/package/nodemon)
+4. [Express](https://www.npmjs.com/package/express)
+
 
 #### Installing - 安裝流程
 1. 打開你的 terminal，Clone 此專案至本機電腦
@@ -65,7 +77,7 @@
 
           按下ctrl+c
           
-現在，你可開啟任一瀏覽器瀏覽器輸入 http://localhost:3000 開始使用CC美食網 ~
+現在，你可開啟任一瀏覽器瀏覽器輸入 http://localhost:3000 開始使用<user name>美食網 ~
 
 #### Built With - 使用工具
 ***
@@ -79,6 +91,12 @@
 * [mongoose](https://mongoosejs.com/) 5.9.7
 * [dotenv](https://www.npmjs.com/package/dotenv) 16.0.3
 * [method override](https://www.npmjs.com/package/method-override) 3.0.0
+* [express-session](https://www.npmjs.com/package/express-session)^1.17.1
+* [passport](http://www.passportjs.org/)0.4.1
+* [passport-facebook](http://www.passportjs.org/packages/passport-facebook/)3.0.0
+* [passport-local](http://www.passportjs.org/packages/passport-local/) 1.0.0
+* [bcryptjs](https://www.npmjs.com/package/bcryptjs)2.4.3
+* [connect-flash](https://www.npmjs.com/package/connect-flash)0.1.1
 #### Contributor - 專案開發人員
 ---
 [Chloe905](https://github.com/Chloe905)
